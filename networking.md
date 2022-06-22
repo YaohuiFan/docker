@@ -24,6 +24,8 @@ The following drivers are supported in Docker:
 
 #### Use macvlan network
 
+> Some applications, especially _legacy applications or applications which monitor network traffic_, expect to be directly connected to the physical network. In this type of situation, you can use the **macvlan network driver** to assign a MAC address to each container’s virtual network interface, making it appear to be a physical network interface directly connected to the physical network. 
+
 The **macvlan** driver is only working on Linux hosts. It creates a macvlan network in two modes:
 - bridge mode: triffic goes through a physical device on the host (usually the host's ethernet interface)
 - 802.1q trunk bridge mode: traffic goes through an 802.1q sub-interface which Docker creates on the fly. Easy to control the routing and filtering
